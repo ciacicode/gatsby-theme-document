@@ -27,9 +27,11 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.1",
     "gatsby": "^2.23.3",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
