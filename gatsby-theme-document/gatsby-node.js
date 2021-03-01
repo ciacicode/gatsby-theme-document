@@ -1,5 +1,16 @@
 const startCase = require('lodash/startCase');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type Mdx implements Node {  
+      position: Int
+    }
+  `;
+  createTypes(typeDefs);
+};
+
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(
     `
@@ -18,6 +29,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     `
   );
+
   if (result.errors) {
     reporter.panic('error loading content', result.errors);
     return;
@@ -70,6 +82,12 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
       name: 'title',
       node,
       value: title
+    });
+
+    createNodeField({
+      name: 'position',
+      node,
+      value: node.frontmatter.position
     });
   }
 };
