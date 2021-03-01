@@ -16,9 +16,9 @@ export default {
   },
   fontSizes: [12, 14, 16, 24, 28, 36, 48, 64],
   fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700
+    body: 300,
+    heading: 300,
+    bold: 300
   },
   lineHeights: {
     body: 1.5,

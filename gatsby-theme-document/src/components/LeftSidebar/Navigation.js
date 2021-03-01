@@ -27,7 +27,7 @@ const calculateTreeData = (edges, sidebarConfig) => {
       accu,
       {
         node: {
-          fields: { slug, title }
+          fields: { slug, title, position }
         }
       }
     ) => {
@@ -49,12 +49,14 @@ const calculateTreeData = (edges, sidebarConfig) => {
       if (existingItem) {
         existingItem.url = slug;
         existingItem.title = title;
+        existingItem.position = position;
       } else {
         prevItems.push({
           label: parts[parts.length - 1],
           url: slug,
           items: [],
-          title
+          title,
+          position
         });
       }
       return accu;
@@ -74,16 +76,16 @@ const calculateTreeData = (edges, sidebarConfig) => {
           tmp.items = [];
         }
       } else {
-        tmp = { label: part, items: [] };
+        tmp = { label: part, position: position, items: [] };
         prevItems.push(tmp);
       }
       prevItems = tmp.items;
     }
-    // sort items alphabetically.
+    // sort items based on position attribute
     prevItems.forEach(item => {
       item.items = item.items.sort(function(a, b) {
-        if (a.label < b.label) return -1;
-        if (a.label > b.label) return 1;
+        if (a.position < b.position) return -1;
+        if (a.position > b.position) return 1;
         return 0;
       });
     });
@@ -114,6 +116,7 @@ const Navigation = () => {
             fields {
               slug
               title
+              position
             }
           }
         }

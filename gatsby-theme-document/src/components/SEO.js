@@ -47,7 +47,6 @@ const seoQuery = graphql`
 const SEO = ({ title, description, url, pathname }) => {
   const results = useStaticQuery(seoQuery);
   const site = results.allSite.edges[0].node.siteMetadata;
-  const twitter = site.social.find(option => option.name === 'twitter') || {};
 
   const fullURL = path => (path ? `${site.siteUrl}${path}` : site.siteUrl);
 
@@ -73,16 +72,6 @@ const SEO = ({ title, description, url, pathname }) => {
     { itemprop: 'description', content: pageDescription },
     { itemprop: 'image', content: fullURL(siteImage) },
     { name: 'description', content: pageDescription },
-
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: site.siteName },
-    { name: 'twitter:title', content: pageTitle },
-    { name: 'twitter:description', content: pageDescription },
-    { name: 'twitter:creator', content: twitter.url },
-    {
-      name: 'twitter:image',
-      content: fullURL(siteImage)
-    },
 
     { property: 'og:title', content: pageTitle },
     { property: 'og:url', content: url },

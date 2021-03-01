@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Github from './icons/Github';
+import Bitbucket from './icons/Bitbucket';
 import Icon from './icons/Icon';
 import Twitter from './icons/Twitter';
 
@@ -24,7 +25,8 @@ const socialQuery = graphql`
 
 const icons = {
   twitter: <Twitter />,
-  github: <Github />
+  github: <Github />,
+  bitbucket: <Bitbucket />
 };
 
 const SocialIcons = () => {

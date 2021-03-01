@@ -45,7 +45,7 @@ const StyledHeader = styled.header`
   align-items: center;
   padding: 1rem 1rem;
   z-index: 5;
-  background: ${p => p.theme.colors.background};
+  background: ${p => p.theme.colors.header};
   transition: all 0.25s var(--ease-in-out-quad);
   border-bottom: 1px solid ${p => p.theme.colors.borderColor};
   transform: ${p => (p.navOpen ? `translateX(16rem)` : null)};
