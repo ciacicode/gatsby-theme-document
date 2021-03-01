@@ -4,7 +4,8 @@ module.exports = {
     name: `Code Bushi`,
     siteUrl: `https://codebushi.com`,
     description: `This is my description that will be used in the meta tags and important for search results`,
-    social: [
+    social: [ { name: `github`,
+        url: `https://github.com/ciacicode`}
     ],
     sidebarConfig: {
       forcedNavOrder: ['/'],

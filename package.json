@@ -1,6 +1,9 @@
 {
   "name": "gatsby-theme-document",
-  "author": ["Code Bushi","ciacicode"],
+  "author": [
+    "Code Bushi",
+    "ciacicode"
+  ],
   "repository": "https://github.com/ciacicode/gatsby-theme-document",
   "version": "1.1.1",
   "main": "index.js",
