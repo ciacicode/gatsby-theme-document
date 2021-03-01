@@ -30,7 +30,7 @@ The left sidebar navigation is automatically populated by the pages in the conte
 
 The logo will link to the `index.mdx` page. To make the `index.mdx` page visible in the left navigation, set `ignoreIndex` to `false`.
 
-Sub navigation items are created by making a folder with the same name as the top level `.mdx` file. The sub navigation is ordered alphabetically.
+Sub navigation items are created by making a folder with the same name as the top level `.mdx` file. The sub navigation is ordered based on the position metadata in each mdx file.
 
 ### Right Sidebar
 
@@ -62,7 +62,7 @@ The code blocks will not change color based on the color modes. For a complete l
 
 ## Social Media Icons
 
-The social media icons in the header can be edited in the `gatsby-config.js` file, under social. Currently, you can only add Twitter and Github links.
+The social media icons in the header can be edited in the `gatsby-config.js` file, under social. Currently, you can only add Twitter and Github and Bitbucket links.
 
 ## SEO, Site Image, and Manifest Icons
 
